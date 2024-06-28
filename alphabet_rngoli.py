@@ -5,21 +5,38 @@ def print_rangoli(size):
     column=((2*size)-1)+((2*size)-2)
     for i in range(1):
         for j in range(row):
-            if j==size-1:
-                start=52-(size+size-1)
-                print('-'.join(alpha)[-start:-52:-1],end='')
-                print('-'.join(alpha)[1:size+size-1])
-            elif j < size-1:
-                st_chr=52-(size+size-1)
-                end=st_chr+(j*2)+1
-                str_pnt='-'.join(alpha)[-st_chr:-end:-1]+'-'.join(alpha)[-end+2:-st_chr+1:+1]
-                print(str_pnt.center(column,'-'))
-            elif j>size-1:
-                st_chr=52-(size+size-1)
-                t=t+2
-                end=52-t
-                str_pnt='-'.join(alpha)[-st_chr:-end:-1]+'-'.join(alpha)[-end+2:-st_chr+1:+1]
-                print(str_pnt.center(column,'-'))
+            if size==26:
+                if j==size-1:
+                    start=52-(size+size-1)
+                    print('-'.join(alpha)[-start:-52:-1],end='')
+                    print('-'.join(alpha)[1:size+size-1])
+                elif j < size-1:
+                    st_chr=52-(size+size-1)
+                    end=st_chr+(j*2)+1
+                    str_pnt='-'.join(alpha)[-st_chr:-end+1:-1]+'-'.join(alpha)[-end+1::+1]
+                    print(str_pnt.center(column,'-'))
+                elif j>size-1:
+                    st_chr=52-(size+size-1)
+                    t=t+2
+                    end=52-t
+                    str_pnt='-'.join(alpha)[-st_chr:-end+1:-1]+'-'.join(alpha)[-end+1::+1]
+                    print(str_pnt.center(column,'-'))
+            else:
+                if j==size-1:
+                    start=52-(size+size-1)
+                    print('-'.join(alpha)[-start:-52:-1],end='')
+                    print('-'.join(alpha)[1:size+size-1])
+                elif j < size-1:
+                    st_chr=52-(size+size-1)
+                    end=st_chr+(j*2)+1
+                    str_pnt='-'.join(alpha)[-st_chr:-end:-1]+'-'.join(alpha)[-end+2:-st_chr+1:+1]
+                    print(str_pnt.center(column,'-'))
+                elif j>size-1:
+                    st_chr=52-(size+size-1)
+                    t=t+2
+                    end=52-t
+                    str_pnt='-'.join(alpha)[-st_chr:-end:-1]+'-'.join(alpha)[-end+2:-st_chr+1:+1]
+                    print(str_pnt.center(column,'-'))
         print()    
 
-print_rangoli(5)        
+print_rangoli(26) 
